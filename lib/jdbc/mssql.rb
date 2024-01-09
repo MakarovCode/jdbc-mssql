@@ -31,7 +31,7 @@ module Jdbc
     def self.load_driver
       warn 'loading JDBC driver on require "jdbc/mssql"' if $VERBOSE
 
-      raise 'No JDBC driver for your java version' unless jre_version > 7
+      raise "No JDBC driver for your java version #{jre_version}" unless jre_version > 7
 
       require jar_file
     end
